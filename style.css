@@ -1,22 +1,59 @@
-body {
-    background-color: rgb(58, 59, 56);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-h3 {
-    text-align: center;
-    color: rgb(3, 85, 70);
-}
-
-div {
-    background-color: rgb(220, 210, 252);
-}
-
-p1 {
-    color: rgb(219, 218, 224);
-}
 
 h1 {
-    color: rgb(219, 218, 224);
-    background-image
+    font-family: "Alegreya Sans";
+}
+
+#mapid {
+    height: 95%;
+    width: 100vw;
+}
+
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  line-height: 24px;
+  color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 0 8px 0 0;
+    opacity: 0.7;
+  }
+
+.legend h4 {
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 12px 8px;
+    color: rgb(51, 51, 51);
+  }
+
+.myDate {
+    height: 20px;
+    width : 450px;
+    padding: 6px 8px;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+}
+
+span {
+    color: blue;
+}
+
+
+.etiqueta_div {
+    height: 8px;
+    text-align: center;
+    font: 10px;
+}
+
+
+
+#info_div {
+    height: 400px;
+    width: 300px;
 }
