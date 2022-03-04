@@ -283,7 +283,7 @@ function inicializaMapa()
      L.tileLayer(myLayer, {
          attribution: atrib,
          maxZoom: 24,
-         id: 'mapbox/satellite-v9',
+         id: 'mapbox/light-v10',//'mapbox/satellite-v9',
          tileSize: 512,
          zoomOffset: -1,
          accessToken: mytoken}).addTo(mymap);
@@ -307,7 +307,7 @@ function inicializaMapa()
 
     legend.addTo(mymap);
     
-    let actualizacion = L.control({ position: "bottomleft" });
+    let actualizacion = L.control({ position: "bottomleft"});
     actualizacion.onAdd = function(map) {
         let div_fecha = L.DomUtil.create("div", "myDate");
         div_fecha.innerHTML = 'Ultima Actualizaci&oacuten: '  + '<span>' + escribeFecha() + '</span>';
@@ -324,9 +324,23 @@ function inicializaMapa()
         
     });
 
-    let info_popup = L.marker([18.682820, -65.420376], 
+    let div_info = L.DomUtil.create("div", "info_div");
+    div_info.innerHTML = '<h3>Informaci&oacuten</h3>' +
+                         '<p>Esta aplicaci&oacuten permite visualizar el estado actual de los embalses en Puerto Rico, ' +
+                         'seg&uacuten datos del Servicio Geol&oacutegico de los Estados Unidos (USGS).</p>' +
+                         '<p> Cada rect&aacutengulo de color tiene una <span>altura</span> que corresponde al nivel actual ' + 
+                         'del embalse. Las <span>flechas</span> indican la tendencia del nivel (a subir, a bajar o a permanecer ' +
+                         'igual). Las l&iacuteneas en cada rect&aacutengulo corresponden a los estados mencionados en la leyenda del mapa. ' + 
+                         'El c&oacutedigo de colores se basa en el de la Autoridad De Acueductos y ' +
+                         'Alcantarillados de Puerto Rico.</p><br>';
+    
+    div_info.innerHTML += '<h3>C&oacutemo usar la aplicaci&oacuten </h3>' + 
+                          '<p><b>Presione</b> cualquier rect&aacutengulo de color para ver la gr&aacutefica ' + 
+                          'del nivel de ese embalse en los &uacuteltimos d&iacuteas.</p>';
+
+    let info_popup = L.marker([18.682820, -65.720376], 
                     {icon: info_icon}).addTo(mymap)
-                    .bindPopup('<div id="icon_div></div>', {offset: [20,120], direction: 'bottom'});
+                    .bindTooltip(div_info,{offset: [20,70], direction: 'bottom'});
 
     return mymap;
 }

@@ -53,7 +53,14 @@ span {
 
 
 
-#info_div {
-    height: 400px;
-    width: 300px;
+.info_div {
+    height: 300px;
+    width: 450px;
+    display: block;
+    white-space: pre-wrap;
 }
+
+.info_div h3 {
+    text-align: center;
+}
+
