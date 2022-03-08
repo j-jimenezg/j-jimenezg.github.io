@@ -143,7 +143,7 @@ function escogeColor(nivel, des, con, seg, ajus, obs) {
      {
          color_codigo = 'blue';
      }
-     else if(nivel >= ajus && nivel < con)
+     else if(nivel >= ajus && nivel < obs)
      {
          color_codigo = 'yellow';
      }
